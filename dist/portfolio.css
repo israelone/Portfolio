@@ -1,0 +1,26 @@
+html,
+body {
+  margin: 0 auto;
+  height: 100%;
+}
+
+
+@media only screen and (max-width: 375px) {
+    #container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: .25fr 2fr .25fr;
+        height: 100%;
+    }
+    nav{
+    text-align: center;
+    }
+    ul{
+        padding: 0;
+        list-style: none;
+    }
+    li{
+        margin: 0 10px;
+        display: inline-block;
+    }
+}
