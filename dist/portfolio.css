@@ -1,26 +1,526 @@
+/* font-family: 'Bebas Neue', cursive;
+font-family: 'Kufam', cursive;
+font-family: 'Lato', sans-serif;
+font-family: 'Poppins', sans-serif;
+ */
+
+/* colors
+#2d86d1 bluish
+ purpleish
+turquoise 
+ */
+:root {
+  --purple: #5f35eb;
+  --green: #2fd477;
+  --blue: #2d86d1;
+  --titles: "Poppins", sans-serif;
+  --textChunk: "Lato", sans-serif;
+}
+
+/* Flipable Div */
+#bioDiv {
+  width: 30vw;
+  height: 30vw;
+  perspective: 600px;
+}
+
+#flippableDiv {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.face {
+  display:flex;
+  justify-content: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+}
+
+.frontSide {
+  background: transparent;
+}
+
+.backSide {
+  transform: rotateY(180deg);
+  top: 6vw;
+}
+
+.cardFlipped {
+  transform: rotateY(180deg);
+}
+
 html,
 body {
   margin: 0 auto;
   height: 100%;
 }
 
+/* Navbar */
 
-@media only screen and (max-width: 375px) {
-    #container{
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: .25fr 2fr .25fr;
-        height: 100%;
-    }
-    nav{
+#logoContainer {
+  display: inline-block;
+  margin-left: 15%;
+  margin-top: 30px;
+  float: left;
+}
+
+nav {
+  width: 100%;
+  justify-self: center;
+  -webkit-box-shadow: 0px 4px 7px -2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 4px 7px -2px rgba(0,0,0,0.75);
+  box-shadow: 0px 4px 7px -2px rgba(0,0,0,0.75);
+  background-color: var(--blue);
+}
+
+#menuList {
+  margin-top: 50px;
+  margin-right: 10%;
+  padding: 0;
+  list-style: none;
+  font-family: "Lato", sans-serif;
+  float: right;
+}
+
+li {
+  font-size: 2.5vw;
+  margin: 0 36px;
+  display: inline-block;
+}
+
+/* About Me */
+
+#title p {
+  margin: 30px 0;
+}
+
+#name {
+  color: var(--purple);
+  font-size: 4vw;
+  grid-row: 2;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  text-shadow: 3px 6px 2px #2d86d1;
+}
+
+#aboutMeButton {
+  padding-left: 10px;
+  font-size: 2.5vw;
+  margin-right: 15px;
+  text-align: center;
+  display: inline-block;
+  align-self: center;
+  cursor: pointer;
+  font-family: var(--textChunk);
+  color: var(--blue);
+  font-weight: 700;
+}
+
+#aboutMeButton i {
+  font-size: 20px;
+  align-self: center;
+}
+
+#buttonContainer {
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 30px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  color: var(--blue);
+  background-color: white;
+  width: fit-content;
+}
+/* 
+ul {
+  padding: 0;
+  list-style: none;
+  font-family: "Lato", sans-serif;
+  float: right;
+} */
+
+a {
+  text-decoration: none;
+}
+
+p mark {
+  background-color: white;
+  color: var(--blue);
+}
+
+#content {
+  display: grid;
+  grid-template-rows: 1fr 80vh 8fr;
+  height: 100%;
+}
+
+#about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  justify-items: center;
+  align-items: center;
+  background-color: var(--green);
+}
+
+h2 {
+  grid-row: 2;
+  text-align: center;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: var(--purple);
+}
+
+#miniBio {
+  width: 38vw;
+  height: 20vw;
+  text-align: center;
+}
+
+#pictureContainer {
+  /* height: 100%;
+  width: 100%;
+  border: 5px solid var(--blue);
+  display: inline-block;
+  grid-row: 1;
+  border-radius: 100%;
+  background-image: url("profile.jpg");
+  background-position: center;
+  background-size: cover;
+  border: 12px solid var(--blue); */
+}
+
+#profilePicture {
+  border-radius: 100%;
+  border: 10px solid var(--blue);
+  width: 20vw;
+  height: 20vw;
+  display: block;
+  align-self: center;
+}
+
+p {
+  font-size: 3vw;
+  grid-row: 1;
+  display: inline-block;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+}
+
+#aboutMe {
+  font-size: 2.5vw;
+  font-family: "Lato", sans-serif;
+  color: white;
+}
+
+#aboutMe mark {
+  color: white;
+  background-color: var(--blue);
+}
+
+#downArrowIcon {
+  cursor: pointer;
+}
+
+#downArrowIcon i {
+  font-size: 40px;
+}
+
+#navArrowContainer {
+  background-color: var(--blue);
+  text-align: center;
+}
+
+#navArrowContainer span {
+  font-family: var(--textChunk);
+  color: white;
+  grid-template-rows: 1;
+  font-size: 2.5vw;
+}
+
+/* Project Section */
+#projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.project {
+  width: 40%;
+  height: 299px;
+  margin: 25px;
+}
+
+.projectBack,
+.projectFront {
+  height: inherit;
+  width: inherit;
+  position: absolute;
+  border-radius: 12px;
+}
+
+.projectFront:hover {
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.projectFront {
+  position: absolute;
+  background-image: url("etchasketc.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: opacity 1s;
+}
+
+.projectBack:hover {
+  z-index: 2;
+  background-color: var(--purple);
+  display: block;
+  color: black;
+}
+
+.projectBack {
+  text-align: center;
+  color: transparent;
+  z-index: 1;
+  transition: all 0.1s ease-in-out;
+  /* try to a transition that comes in slowly and leaves fast */
+}
+
+.icons {
+  bottom: -122px;
+  position: absolute;
+  transition-property: bottom;
+  transition: all 1.5s;
+  position: relative;
+  will-change: bottom;
+}
+
+.icons a {
+  color: inherit;
+  text-emphasis: none;
+  margin: 0 20px;
+}
+
+.projectBack:hover .icons {
+  bottom: -80px;
+}
+
+a:visited {
+  color: white;
+}
+
+i {
+  font-size: 3.5vw;
+}
+
+/* Contact Section */
+button {
+  background-color: var(--purple);
+  border: 2px solid var(--blue);
+  width: 100px;
+  height: 30px;
+  border-radius: 6px;
+  font-size: 19px;
+  font-family: var(--titles);
+  color: var(--green);
+}
+
+#contact {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  background-color: var(--green);
+  justify-items: center;
+  align-items: center;
+}
+
+form {
+  margin: 30px 0;
+}
+#contactFormSection {
+  justify-content: center;
+  padding: 0 100px;
+}
+h2 {
+  text-align: left;
+}
+
+input {
+  height: 30px;
+  width: 80%;
+  border-radius: 10px;
+  border: 1px solid #0f206bed;
+  margin-bottom: 14px;
+}
+
+textarea {
+  width: 90%;
+  border-radius: 10px;
+  border: 1px solid #0f206bed;
+}
+
+#socialMedia {
+  width: 300px;
+  height: 100%;
+  grid-column: 1;
+  text-align: center;
+}
+
+i {
+  justify-self: center;
+  display: inline-block;
+  align-self: center;
+}
+
+/* i, span{
+    font-size: 20px;
+} */
+
+#phoneAndEmail {
+  width: fit-content;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, auto);
+}
+
+#phoneAndEmail span{
+  font-size: 20px;
+  align-self: center;
+  width: fit-content;
+  background-color: white;
+  color: var(--purple);
+  font-family: var(--textChunk);
+  font-weight: 600;
+  padding: 0 2px;
+}
+
+#phoneAndEmail i {
+  color: var(--blue);
+}
+
+#logo {
+  grid-row: 1;
+  text-align: center;
+}
+
+#logo img{
+  width: 12vw;
+  height: 12vw;
+}
+
+span {
+  display: block;
+}
+
+#navBarLogo {
+  padding: 10px;
+  width: 11vh;
+  height: 11vh;
+}
+
+#contactInfoSection {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, auto);
+  grid-gap: 20px;
+}
+
+#socialMedia i {
+  font-size: 50px;
+  margin: 0 12px;
+}
+
+/* Footer */
+
+@media only screen and (max-width: 425px) {
+  /* About Me */
+
+  #aboutMeButton {
+    margin: 0 5px;
+    font-size: 4.5vw;
+    padding: 0;
+  }
+
+  i {
+    font-size: 5.5vw;
+  }
+
+  #navArrowContainer span {
+    font-size: 4.5vw;
+  }
+
+  #downArrowIcon i {
+    font-size: 7vw;
+  }
+
+  #content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 4fr 0.5fr;
+    grid-auto-rows: auto;
+    background-color: var(--green);
+  }
+
+  #about {
+    display: flex;
+    align-content: center;
+  }
+
+  #title {
+    margin: auto;
     text-align: center;
-    }
-    ul{
-        padding: 0;
-        list-style: none;
-    }
-    li{
-        margin: 0 10px;
-        display: inline-block;
-    }
+  }
+
+  #title p {
+    margin: 20px 0;
+    font-size: 5vw;
+  }
+
+  #name {
+    font-size: 10vw;
+  }
+
+  #logoContainer {
+    display: none;
+  }
+
+  nav {
+    width: 90%;
+    height: 100%;
+    position: relative;
+    grid-row: 1;
+    background-color: var(--blue);
+    text-align: center;
+    
+  }
+
+  #menuList {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+  }
+
+  li {
+    margin: auto 10px;
+    display: inline-block;
+  }
+
+  .sections {
+    font-size: 5vw;
+  }
+
+  /* Projects */
+  .project {
+    width: 70%;
+  }
 }
