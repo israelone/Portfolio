@@ -44,6 +44,23 @@ export default function ProjectsSection() {
                   {project.description}
                 </p>
 
+                {/* Optional highlights for deeper project context */}
+                {project.highlights && project.highlights.length > 0 && (
+                  <ul className="mb-5 space-y-2">
+                    {project.highlights.map((item) => (
+                      <li
+                        key={item}
+                        className="text-xs text-gray-600 leading-relaxed pl-4 relative"
+                      >
+                        <span className="absolute left-0 top-0.5 text-cyan-600">
+                          •
+                        </span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
                 {/* Technologies */}
                 <div className="mb-6">
                   <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">

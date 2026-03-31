@@ -77,11 +77,14 @@ export const portfolioData = {
         title: "Software Developer",
         company: "Dorger Software Architects",
         period: "Present",
-        description: "Develop enterprise applications using modern tech stack including React, TypeScript, and Node.js. Collaborate with cross-functional teams to deliver scalable solutions.",
+        description: "Maintain and enhance enterprise web application components and data workflows while delivering accessible, user-centered experiences aligned with business and platform requirements.",
         achievements: [
-          "Build responsive, accessible front-end components used across multiple client projects",
-          "Design and implement REST APIs for robust backend services",
-          "Optimize application performance and improve code quality through code reviews",
+          "Created intuitive, visually appealing, and accessible UIs tailored to support diverse platform models and use cases",
+          "Authored technical documentation including user guides, API documentation, and system workflow references to improve maintainability",
+          "Guided and supported junior developers, encouraging knowledge sharing and team growth",
+          "Resolved production issues and improved performance in data-driven application modules",
+          "Leveraged AI-assisted tools (ChatGPT, Codex, and Warp) to accelerate debugging, code generation, and development workflows",
+          "Maintained and enhanced enterprise application components and underlying data workflows",
         ],
       },
       {
@@ -112,35 +115,40 @@ export const portfolioData = {
   // Projects section
   projects: {
     title: "Featured Projects",
-    intro: "I'm currently building case studies for my strongest projects. Here are placeholder project examples—each showcases different aspects of my skills.",
+    intro: "Selected projects that reflect my focus on practical internal tools, strong front-end architecture, and business-oriented UX decisions.",
     projects: [
-      {
-        title: "AI-Powered Internal Task Assistant",
-        description:
-          "A React-based internal tool that uses AI to help teams manage tasks more efficiently. Integrated ChatGPT API for intelligent task suggestions and auto-categorization.",
-        technologies: ["React", "TypeScript", "Node.js", "OpenAI API", "Tailwind CSS"],
-        link: "#", // Update with your project link
-        github: "#", // Update with your GitHub repo
-        featured: true,
-      },
+      // {
+      //   title: "AI-Powered Internal Task Assistant",
+      //   description:
+      //     "A React-based internal tool that uses AI to help teams manage tasks more efficiently. Integrated ChatGPT API for intelligent task suggestions and auto-categorization.",
+      //   technologies: ["React", "TypeScript", "Node.js", "OpenAI API", "Tailwind CSS"],
+      //   link: "#", // Update with your project link
+      //   github: "#", // Update with your GitHub repo
+      //   featured: true,
+      // },
       {
         title: "Construction Project Tracker",
         description:
-          "Full-stack application for managing construction projects. Features real-time updates, resource allocation, and progress tracking with PostgreSQL backend.",
-        technologies: ["React", "Node.js", "Express", "PostgreSQL", "Socket.io"],
-        link: "#",
-        github: "#",
+          "Frontend-only React application simulating an internal project controls dashboard for commercial construction operations. Built for PMs and operations leads to evaluate staffing pressure, financial variance, milestone health, inspections, and active risk before coordination meetings.",
+        highlights: [
+          "Portfolio dashboard, project detail, risks/issues, schedule look-ahead, and team capacity views shaped around construction workflows",
+          "Domain-specific mock data and centralized formatting utilities for currency, dates, labels, and variance language",
+          "Internal-tool UX focused on scanability with dense tables, compact metadata, and grounded business-first visual hierarchy",
+        ],
+        technologies: ["React 18", "TypeScript", "Vite", "Tailwind CSS", "React Router"],
+        link: "https://israelone.github.io/ConstructionProjectTracker",
+        github: "https://github.com/israelone/ConstructionProjectTracker",
         featured: true,
       },
-      {
-        title: "Developer Debug Assistant",
-        description:
-          "CLI tool that leverages AI to help developers quickly debug errors and generate solutions. Integrated with common debugging workflows.",
-        technologies: ["TypeScript", "Node.js", "OpenAI", "CLI"],
-        link: "#",
-        github: "#",
-        featured: true,
-      },
+      // {
+      //   title: "Developer Debug Assistant",
+      //   description:
+      //     "CLI tool that leverages AI to help developers quickly debug errors and generate solutions. Integrated with common debugging workflows.",
+      //   technologies: ["TypeScript", "Node.js", "OpenAI", "CLI"],
+      //   link: "#",
+      //   github: "#",
+      //   featured: true,
+      // },
     ],
   },
 
